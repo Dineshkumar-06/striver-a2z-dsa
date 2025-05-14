@@ -1,6 +1,6 @@
 # Striver A2Z DSA Sheet – My Learning Journey
 
-This repository contains my solutions to the **Striver A2Z DSA Sheet** curated by [Raj Vikramaditya (Striver)](https://takeuforward.org/). I'm solving the problems in **C++** to strengthen my grasp on Data Structures and Algorithms.
+This repository contains my solutions to the **Striver A2Z DSA Sheet** curated by Raj Vikramaditya (Striver). I'm solving the problems in **C++** to strengthen my grasp on Data Structures and Algorithms.
 
 ---
 
