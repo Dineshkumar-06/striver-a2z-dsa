@@ -1,5 +1,5 @@
-/* 
-Problem links: 
+/*
+Problem links:
 https://leetcode.com/problems/palindrome-number/description/
 https://takeuforward.org/data-structure/check-if-a-number-is-palindrome-or-not/
 
@@ -31,51 +31,51 @@ Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
 
 using namespace std;
 
-class Solution {
-    public:
-        bool isPalindrome(int x) {
-            if(x < 0) {
-                return false;
-            }
-    
-            int temp_x = x;
-    
-            int reversed_no = 0;
-            int temp = 0;
-    
-            while(temp_x != 0) {
-                temp = temp_x % 10;
-    
-                if ((reversed_no > INT_MAX / 10) || ((reversed_no == INT_MAX / 10) && temp > 7)) return false;
-    
-                reversed_no = (reversed_no * 10) + temp; 
-                temp_x /= 10;
-            }
-    
-            if (x == reversed_no) {
-                return true;
-            } else {
-                return false;
-            }
-    
+class Solution
+{
+public:
+    bool isPalindrome(int x)
+    {
+        if (x < 0)
+        {
+            return false;
         }
-    };
 
+        int temp_x = x;
 
-/* 
+        int reversed_no = 0;
+        int temp = 0;
+
+        while (temp_x != 0)
+        {
+            temp = temp_x % 10;
+
+            if ((reversed_no > INT_MAX / 10) || ((reversed_no == INT_MAX / 10) && temp > 7))
+                return false;
+
+            reversed_no = (reversed_no * 10) + temp;
+            temp_x /= 10;
+        }
+
+        if (x == reversed_no)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+};
+
+/*
 Explanation:
 
 My Approach:
-
-I thought about reducing the number by dividing by 10 but I was not able to come up with a common formula to bind it together. Also, I didn't think about modulo. I had help to solve this.
-
-Efficient Approach:
-
-res = (res * 10) + temp; This formula changed the game for me. Also, the edge case handling is a very nice thought process where INT_MAX = 2147483647 and INT_MIN = -2147483648. 
-It accounted for both the multiplication case where we do (res * 10) with (res > INT_MAX / 10) and for the addition case (res == INT_MAX / 10 && temp > 7). 
+I did this problem myself. Since I did the reverse a number previously, I used the same logic here to reverse the number and then compare it with the original number.
 
 Time Complexity: O(log₁₀N + 1)
-Reason: 
+Reason:
     The time complexity of O(log₁₀N + 1) comes from the number of digits in the integer N.
 
     Here’s why:
@@ -84,6 +84,6 @@ Reason:
 
     Loop Execution: In the problem, you process each digit of N (e.g., using x % 10 and x /= 10), which takes 1 iteration per digit. Hence, the loop runs approximately log₁₀N + 1 times.
 
-Space Complexity: O(1) 
+Space Complexity: O(1)
 
 */
